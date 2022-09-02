@@ -6,12 +6,12 @@ console.log('Proofing the readFile is asynchronous');
 
 // reading file asynchronously
 // if the encoding is specified, the return value is string
-filestream.readFile('test.txt','ascii',(error,data)=>{console.log(data)});
+filesystem.readFile('test.txt','ascii',(error,data)=>{console.log(data)});
 
 console.log('This should be executed first before the callback of readFile');
 
 
 // reading file synchronously
 // if the encoding is specified, the return value is string
-file = filestream.readFileSync('test2.txt','ascii')
+file = filesystem.readFileSync('test2.txt','ascii')
 console.log(file)
