@@ -11,10 +11,17 @@ const server = http.createServer((request,response)=>{
         response.write("<h3><b>You requesting by GET method</b></h3>");
         response.end()
     }else if(method ==='POST'){
-        response.setHeader('Content-Type','text/html')
-        response.statusCode=200;
-        response.write("<h3><b>You requesting by POST method</b></h3>");
-        response.end()
+        // rememeber that the data retrieve from client is stream data, then the request is a derivative of ReadStream
+        // this variable is used as a container from buffer ReadStream
+        let body=  []
+        request.on('data',(chunkOfData)=>{body.push(chunkOfData)});
+        request.on('end',()=>{
+            console.log(body.join());
+            response.setHeader('Content-Type','text/html')
+            response.statusCode=200;
+            response.write("<h3><b>You requesting by POST method</b></h3>");
+            response.end()
+        })
     }
 })
 
