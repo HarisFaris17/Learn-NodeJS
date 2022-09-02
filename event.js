@@ -2,6 +2,7 @@
 import {EventEmitter} from 'events'
 
 // try to implement there is event click
+// remember that EvenetEmitter should handle events, and events is asynchronous. Then EvenetEmitter is asynchronous (as a proof, there is callback function on 'on' method)
 let event  = new EventEmitter()
 
 const display = ()=>{
