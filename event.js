@@ -15,4 +15,16 @@ event.on('klik',()=>{console.log("Nuke the beautiful one")});
 // even can add the same callback function, therefore function display will executed twice
 event.on('klik',display)
 
+// suppose that event klik has happened
 event.emit('klik',null);
+
+let event2 = new EventEmitter();
+
+// the parameter of callback function use destructuring object, since the value that will be passed to the callback funcions only certain propertys
+event2.on('display-name',({name})=>{console.log(`Hai ${name}`)});
+event2.on('display-name',({balance})=>{console.log(`Your balance is ${balance}`)});
+
+// here the second argument will be passed to all functions registered as callback functions of 'display-name'. If certain callback function only need certain property of the second argument, therefore object destructuring should be implemented to the callback functions
+event2.emit('display-name',{name : 'Haris', balance : 10000000});
+
+
