@@ -1,0 +1,19 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "Learn Node-JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarisFaris17/Learn-NodeJS.git"
+  },
+  "author": "Haris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarisFaris17/Learn-NodeJS/issues"
+  },
+  "homepage": "https://github.com/HarisFaris17/Learn-NodeJS#readme"
+}
