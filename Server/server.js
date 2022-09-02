@@ -16,10 +16,12 @@ const server = http.createServer((request,response)=>{
         let body=  []
         request.on('data',(chunkOfData)=>{body.push(chunkOfData)});
         request.on('end',()=>{
-            console.log(body.join());
+            body=body.join();
+            // get username from data of the user
+            let {username} = JSON.parse(body);
             response.setHeader('Content-Type','text/html')
             response.statusCode=200;
-            response.write("<h3><b>You requesting by POST method</b></h3>");
+            response.write(`<h3><b>You requesting by POST method, ${username}</b></h3>`);
             response.end()
         })
     }
